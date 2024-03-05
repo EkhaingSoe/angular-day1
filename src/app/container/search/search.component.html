@@ -1,0 +1,13 @@
+
+<div class="mx-10">
+    <div class="flex items-center justify-center my-5">
+        <div>
+          <input type="search" value={{searchText}} class="border w-[300px] outline-none py-2 px-2 text-sm" placeholder="Search..." [(ngModel)]="searchText" />
+          <button class="bg-black text-white text-sm py-2 px-4">Search</button>
+        </div>
+      </div>
+      <div *ngIf="searchText!= '' ">
+        <h1>Search result for : <span class="text-orange-600">{{searchText}}</span></h1>
+      </div>
+</div>
+
