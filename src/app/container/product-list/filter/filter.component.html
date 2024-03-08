@@ -1,14 +1,14 @@
 <div class="mb-5 flex items-center gap-6">
   <div class="flex items-center gap-2">
-    <input type="radio" value="all" [(ngModel)]="selectedRadioButton"  />
+    <input type="radio" value="all" [(ngModel)]="selectedRadioButton" (change)="sendDataToParent()"  />
     <span>{{'All ('+all+')'}}</span>
   </div>
   <div class="flex items-center gap-2">
-    <input type="radio" value="InStock" [(ngModel)]="selectedRadioButton" />
+    <input type="radio" value="true" [(ngModel)]="selectedRadioButton" (change)="sendDataToParent()"  />
     <span>{{'InStock ('+InStock+')'}}</span>
   </div>
   <div class="flex items-center gap-2">
-    <input type="radio" value="OutOfStock" [(ngModel)]="selectedRadioButton" />
+    <input type="radio" value="false" [(ngModel)]="selectedRadioButton" (change)="sendDataToParent()" />
     <span>{{'OutOfStock ('+OutOfStock+')'}}</span>
   </div>
 </div>

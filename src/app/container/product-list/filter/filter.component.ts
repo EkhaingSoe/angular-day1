@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-filter',
@@ -14,6 +14,16 @@ export class FilterComponent {
   OutOfStock:number=0;
 
   selectedRadioButton : string ="all"
+
+  @Output() SelectedRadioButtonChanged = new EventEmitter<string>();
+
+  sendDataToParent(){
+
+    console.log(this.selectedRadioButton);
+    this.SelectedRadioButtonChanged.emit(this.selectedRadioButton)
+    
+
+  }
 
   
 

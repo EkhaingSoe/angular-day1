@@ -536,6 +536,14 @@ export class ProductListComponent {
   totalProductCount=this.products.length;
   InStockCount=this.products.filter((pd)=>pd.is_in_inventory===true).length;
   OutOfStockCount=this.products.filter((pd)=>pd.is_in_inventory===false).length;
+
+  selectedRadioButton : string ='all';
+
+  reveiveRadioButton(value:string){
+    console.log(value);
+    this.selectedRadioButton=value;
+    
+  }
  
   
 

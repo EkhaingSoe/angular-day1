@@ -1,7 +1,11 @@
 <div class="my-7 mx-10 text-sm">
-    <app-filter [all]="totalProductCount" [InStock]="InStockCount" [OutOfStock]="OutOfStockCount"></app-filter>
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
+    <app-filter [all]="totalProductCount" [InStock]="InStockCount" [OutOfStock]="OutOfStockCount" (SelectedRadioButtonChanged)="reveiveRadioButton($event)"></app-filter>
+    <div class="flex items-center justify-center flex-wrap gap-5">
+
+        <div *ngFor="let prod of products" >
+
+            <app-product [product]="prod" *ngIf="selectedRadioButton==='all' || prod.is_in_inventory.toString() === selectedRadioButton"  ></app-product>
+        </div>
        
-        <app-product *ngFor="let prod of products" [product]="prod" ></app-product>
     </div>
 </div>
