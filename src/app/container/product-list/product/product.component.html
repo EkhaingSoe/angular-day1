@@ -17,5 +17,10 @@
             <h1>{{product.color.length + ' colors'}}</h1>
             <h1>Best Seller</h1>
         </div>
+        <h1 [ngClass]="{
+            'font-medium':true,
+            'text-green-600':product.is_in_inventory,
+            'text-red-600':!product.is_in_inventory
+        }" >{{product.is_in_inventory? "isAvaliable":"Not Avaliable"}}</h1>
     </div>
 </div>

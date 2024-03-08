@@ -13,5 +13,8 @@ export class FilterComponent {
   @Input()
   OutOfStock:number=0;
 
+  selectedRadioButton : string ="all"
+
+  
 
 }
